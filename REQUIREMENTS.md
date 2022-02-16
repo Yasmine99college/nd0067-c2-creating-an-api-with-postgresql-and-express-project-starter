@@ -5,20 +5,20 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 ## API Endpoints
 #### Products
-- Index 
-- Show
-- Create [token required]
+- Index :'/productStore' [GET]
+- Show:'/productStore/:id' [GET]
+- Create [token required]:'/productStore' [POST]
 - [OPTIONAL] Top 5 most popular products 
 - [OPTIONAL] Products by category (args: product category)
 
 #### Users
-- Index [token required]
-- Show [token required]
-- Create N[token required]
+- Index [token required]:'/users'[GET]
+- Show [token required]:'/users/:id' [GET]
+- Create N[token required]: '/users' [POST]
 
 #### Orders
-- Current Order by user (args: user id)[token required]
-- [OPTIONAL] Completed Orders by user (args: user id)[token required]
+- Current Order by user (args: user id)[token required] :'ordersList' [GET]
+- [OPTIONAL] Completed Orders by user (args: user id)[token required]: '/ordersList/:id' [GET]
 
 ## Data Shapes
 #### Product
@@ -26,12 +26,28 @@ These are the notes from a meeting with the frontend developer that describe wha
 - name
 - price
 - [OPTIONAL] category
+[CREATE TABLE Product (
+    id SERIAL PRIMARY  KEY,
+    name VARCHAR(70) NOT NULL,
+    price integer NOT NULL,
+    category VARCHAR(70)
+
+);
+]
 
 #### User
 - id
 - firstName
 - lastName
 - password
+[CREATE TABLE User (
+    id SERIAL PRIMARY  KEY,
+    fname VARCHAR(50) NOT NULL,
+    lname VARCHAR(50) NOT NULL,
+    passwords VARCHAR(40) NOT NULL
+    
+
+);]
 
 #### Orders
 - id
@@ -39,4 +55,12 @@ These are the notes from a meeting with the frontend developer that describe wha
 - quantity of each product in the order
 - user_id
 - status of order (active or complete)
+[CREATE TABLE Orders (
+    id SERIAL PRIMARY  KEY,
+    productID REFERENCES Product(id),
+    userID REFERENCES User(id),
+    Qty integer,
+    status ENUM('active', 'complete')  
 
+
+);]
