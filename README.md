@@ -18,24 +18,25 @@ Your application must make use of the following libraries:
 
 - yarn or npm install
 **Packages** :
+- npm install
 
-- Express
+- Express: npm i -S express npm i -D @types/express
 
-- Typescript
+- Typescript: npm i -D typescript
 
-- db-migrate
+- db-migrate: npm install -g db-migrate
 
-- cors
+- cors: npm install --save cors
 
-- bcrypt
+- bcrypt: npm -i bcrypt npm -i -D @types/bcrypt
 
-- morgan
+- morgan: npm install --save morgan npm -i -D @types/morgan
 
-- jsonwebtoken
+- jsonwebtoken: npm install jsonwebtoken --sav npm -i -D @types/jsonwebtoken
 
-- cross-env
+- cross-env: npm install --save-dev cross-env
 
-- jasmine
+- jasmine: npm install jasmine @types/jasmine @ert78gb/jasmine-ts ts-node --save-dev
 
 
 ### Set up Database
