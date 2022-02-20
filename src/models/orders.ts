@@ -1,10 +1,10 @@
 import Client from '../database'
 
 export type Order={
-    id: Number;
-    productID: Number;
-    userID: Number;
-    Qty: Number;
+    id: number | undefined;
+    productID: number;
+    userID: number;
+    Qty: number;
     status: string;
 
 }

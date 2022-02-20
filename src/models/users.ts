@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt'
 
 
 export type Users={
-    id: Number;
+    id: number | undefined;
     fname: string;
     lname: string;
     passwords: string;

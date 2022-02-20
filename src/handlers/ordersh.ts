@@ -16,6 +16,8 @@ const show = async (req: Request, res: Response) => {
 const create = async (req: Request, res: Response) => {
     try {
         const ordersList: Order = {
+            id: undefined,
+
             productID: req.body.productID,
             userID: req.body.userID,
             Qty: req.body.Qty,
